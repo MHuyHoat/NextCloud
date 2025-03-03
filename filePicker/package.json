@@ -1,0 +1,83 @@
+{
+	"name": "nextcloud-webdav-filepicker",
+	"version": "1.0.6",
+	"description": "Nextcloud WebDav file picker",
+	"directories": {
+		"test": "tests"
+	},
+	"scripts": {
+		"build": "NODE_ENV=production webpack --progress --config webpack.js",
+		"dev": "NODE_ENV=development webpack --progress --config webpack.js",
+		"watch": "NODE_ENV=development webpack --progress --watch --config webpack.js",
+		"lint": "eslint --ext .js,.vue src",
+		"lint:fix": "eslint --ext .js,.vue src --fix",
+		"stylelint": "stylelint src",
+		"stylelint:fix": "stylelint src --fix",
+		"serve": "http-server ./ -o examples/with-vue.html -a localhost"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/julien-nc/nextcloud-webdav-filepicker"
+	},
+	"keywords": [
+		"filepicker",
+		"nextcloud",
+		"webdav"
+	],
+	"author": "Julien Veyssier",
+	"license": "AGPL-3.0",
+	"bugs": {
+		"url": "https://github.com/julien-nc/nextcloud-webdav-filepicker/issues"
+	},
+	"homepage": "https://github.com/julien-nc/nextcloud-webdav-filepicker",
+	"browserslist": [
+		"extends @nextcloud/browserslist-config"
+	],
+	"main": "js/Components/NcWebdavFilePicker.js",
+	"files": [
+		"COPYING",
+		"README.md",
+		"src",
+		"js",
+		"css",
+		"examples"
+	],
+	"engines": {
+		"node": ">=16.0.0",
+		"npm": "^7.0.0 || ^8.0.0"
+	},
+	"dependencies": {
+		"@nextcloud/dialogs": "^5.3.1",
+		"@nextcloud/l10n": "^3.1.0",
+		"@nextcloud/moment": "^1.1.1",
+		"@nextcloud/paths": "^2.0.0",
+		"@nextcloud/router": "^3.0.1",
+		"@nextcloud/vue": "^8.12.0",
+		"axios": "^1.2.1",
+		"base-64": "^1.0.0",
+		"buffer": "^6.0.3",
+		"gettext-parser": "^8.0.0",
+		"nextcloud-webdav-filepicker": "^1.0.6",
+		"oidc-client": "^1.11.5",
+		"path-browserify": "^1.0.1",
+		"util": "^0.12.4",
+		"vue": "^2.6.13",
+		"vue-click-outside": "^1.1.0",
+		"vue-material-design-icons": "^5.1.2",
+		"vue-simple-progress": "^1.1.1",
+		"vuejs-smart-table": "^0.0.7"
+	},
+	"devDependencies": {
+		"@nextcloud/babel-config": "^1.0.0",
+		"@nextcloud/browserslist-config": "^3.0.0",
+		"@nextcloud/eslint-config": "^8.1.4",
+		"@nextcloud/stylelint-config": "^2.0.1",
+		"@nextcloud/webpack-vue-config": "^6.0.0",
+		"eslint-webpack-plugin": "^4.0.0",
+		"file-loader": "^6.1.1",
+		"http-server": "^14.1.0",
+		"lodash": "^4.17.21",
+		"process": "^0.11.10",
+		"stylelint-webpack-plugin": "^5.0.1"
+	}
+}
