@@ -86,7 +86,7 @@ class NextCloudAutoLoginController extends Controller {
 	#[FrontpageRoute(verb: 'GET', url: '/auth')]
 	public function auth(string $jwt=null,$userName=null, string $targetPath='/index.php/apps/files/files') {
 		try {
-			
+	
 			if (empty($jwt)) {
 				# code...
 				throw new Exception("Thiếu jwt", 1);
@@ -106,11 +106,11 @@ class NextCloudAutoLoginController extends Controller {
 				throw new Exception("Thiếu user_name");
 			}
 	
-			$redirectUrl = '/';
-			$targetPathParsed = parse_url($targetPath);
-			if ($targetPathParsed !== false) {
-				$redirectUrl = $targetPathParsed['path'];
-			}
+			$redirectUrl = $targetPath;
+			// $targetPathParsed = parse_url($targetPath);
+			// if ($targetPathParsed !== false) {
+			// 	$redirectUrl = $targetPathParsed['path'];
+			// }
 			
 			$user = $this->userManager->get($userName);
 			 
